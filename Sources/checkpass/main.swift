@@ -14,7 +14,7 @@ struct Checkpass: ParsableCommand {
     var password: String?
     
     @Flag(help: "Silent mode.")
-    var silent: Bool
+    var silent = false
     
     mutating func run() throws {
         guard let password = self.password ?? readLine() else {
@@ -24,7 +24,6 @@ struct Checkpass: ParsableCommand {
         let digest = SHA1.hash(ArraySlice(password.utf8)).hex()
         let suffix = digest.dropFirst(5)
         
-        // TODO: Padding?
         let lines = try String(contentsOf: URL(string:
             "https://api.pwnedpasswords.com/range/\(digest.prefix(5))")!)
         
