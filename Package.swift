@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "checkpass",
     dependencies: [
-        .package(url: "https://github.com/apple/swift-argument-parser", from: "0.2.0"),
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "0.3.1"),
         .package(url: "https://github.com/nixberg/sha1-swift", from: "0.2.0")
     ],
     targets: [
