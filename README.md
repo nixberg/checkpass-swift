@@ -13,7 +13,7 @@ USAGE: checkpass [<password>] [--silent]
 
 ARGUMENTS:
   <password>              The password to check. 
-        If no input file is provided, the tool reads from stdin.
+        If no input is provided, the tool reads from stdin.
 
 OPTIONS:
   --silent                Silent mode. 
