@@ -8,7 +8,7 @@ struct Checkpass: ParsableCommand {
     
     @Argument(help: ArgumentHelp(
         "The password to check.",
-        discussion: "If no input file is provided, the tool reads from stdin."))
+        discussion: "If no input is provided, the tool reads from stdin."))
     var password: String?
     
     @Flag(help: "Silent mode.")
