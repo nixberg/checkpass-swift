@@ -1,5 +1,7 @@
 # checkpass
 
+## Usage
+
 ```console
 > checkpass password
 Password found 3759315 times!
@@ -19,3 +21,10 @@ OPTIONS:
   --silent                Silent mode. 
   -h, --help              Show help information.
 ```
+
+## Installation
+
+```console
+> brew tap nixberg/tap
+> brew install checkpass
+````
