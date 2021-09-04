@@ -2,6 +2,7 @@ import ArgumentParser
 import Foundation
 import SHA1
 
+@main
 struct Checkpass: ParsableCommand {
     static var configuration = CommandConfiguration(
         abstract: "Checks a password against the Pwned Passwords API.")
@@ -53,10 +54,8 @@ struct Checkpass: ParsableCommand {
     }
 }
 
-extension DataProtocol {
+fileprivate extension Collection where Element == UInt8 {
     func hex() -> String {
         self.map { String(format: "%02hhx", $0) }.joined()
     }
 }
-
-Checkpass.main()
