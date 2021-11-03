@@ -20,7 +20,7 @@ struct Checkpass: ParsableCommand {
             throw ValidationError("Missing expected argument '<password>'")
         }
         
-        let digest = SHA1.hash(ArraySlice(password.utf8)).hex()
+        let digest = SHA1.hash(contentsOf: password.utf8).hexString()
         let suffix = digest.dropFirst(5)
         
         let url = "https://api.pwnedpasswords.com/range/\(digest.prefix(5))"
@@ -55,7 +55,7 @@ struct Checkpass: ParsableCommand {
 }
 
 fileprivate extension Collection where Element == UInt8 {
-    func hex() -> String {
+    func hexString() -> String {
         self.map { String(format: "%02hhx", $0) }.joined()
     }
 }
